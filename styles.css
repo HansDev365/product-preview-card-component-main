@@ -1,0 +1,158 @@
+/*Root of the project*/
+:root {
+  --cream-color: #f2ebe3;
+  --dark-blue: #1c232b;
+  --grey-text: #6c7289;
+  --green-color: #3c8067;
+  --dark-green: #1a4032;
+  --white: #ffffff;
+}
+
+/* Resetting everything so it looks the same on all browsers */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* This is the background of the whole page */
+body {
+  background-color: var(--cream-color);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--grey-text);
+  min-height: 100vh;
+}
+
+/* Centering the card on the screen */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+/* The main container for the product */
+.product-card {
+  background-color: var(--white);
+  width: 100%;
+  max-width: 600px; /* Making sure it doesn't get too big */
+  display: grid; /* Using grid to make two columns */
+  grid-template-columns: 1fr 1fr; /* Two columns that are equal size */
+  border-radius: 10px; 
+  overflow: hidden; 
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1); 
+}
+.product-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; 
+}
+
+/* Styling the text part */
+.card-content {
+  padding: 32px;
+  display: grid; /* Using grid inside for spacing */
+  gap: 20px; /* Space between all elements in the text area */
+}
+
+/* The small "Perfume" text at the top */
+.product-category {
+  font-size: 12px;
+  letter-spacing: 5px; /* Spacing out the letters */
+  text-transform: uppercase;
+}
+
+/* The big title */
+.product-name {
+  color: var(--dark-blue);
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+/* The description paragraph */
+.product-description {
+  font-size: 14px;
+  line-height: 23px;
+}
+
+/* Grouping the prices together */
+.price-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* The discounted price */
+.current-price {
+  color: var(--green-color);
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+}
+
+/* The old price with a line through it */
+.old-price {
+  font-size: 13px;
+  text-decoration: line-through; /* This adds the strike-through */
+}
+
+/* The big green button */
+.cta {
+  background-color: var(--green-color);
+  color: var(--white);
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer; /* Makes the mouse change when hovering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.3s; /* Makes the hover effect smooth */
+}
+
+/* Change color when mouse is over the button */
+.cta:hover {
+  background-color: var(--dark-green);
+}
+
+/* Small text at the very bottom */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.attribution a {
+  color: var(--dark-green);
+}
+
+/* This part is for mobile phones */
+@media (max-width: 600px) {
+  main {
+    padding: 28px 16px;
+  }
+
+  .product-card {
+    grid-template-columns: 1fr; /* Only one column for phones */
+    max-width: 343px;
+  }
+
+  .product-image-wrapper {
+    height: 240px; /* Fixed height for mobile image */
+  }
+
+  .card-content {
+    padding: 24px;
+    gap: 15px;
+  }
+  
+  .product-name {
+    font-size: 31px;
+  }
+}
